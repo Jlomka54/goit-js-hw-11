@@ -8,7 +8,7 @@ import SimpleLightbox from "simplelightbox";
 const formEl = document.querySelector('.serch-form');
 const galeryList = document.querySelector('.galery-list');
 
-const galleryLightbox = new SimpleLightbox('.gallery a', {
+const galleryLightbox = new SimpleLightbox('.galery-list a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
@@ -17,7 +17,7 @@ const galleryLightbox = new SimpleLightbox('.gallery a', {
 const onSerchPhotos = event => {
     event.preventDefault();
     const serchValue = formEl.elements.serch.value;
-
+galeryList.innerHTML = '<span class="loader"></span>';
     fetchPhotos(serchValue)
         .then(data => {
             if (data.hits.length === 0) {
@@ -30,11 +30,15 @@ const onSerchPhotos = event => {
 
                 return;
             }
-            console.log(data);
 
             const galleryCardsTemplate = data.hits.map(photoInfo => createGalerryCard(photoInfo)).join('');
-           
+            
             galeryList.innerHTML = galleryCardsTemplate;
+            galleryLightbox.refresh();
+            setTimeout(() => {
+        galeryList.innerHTML = galleryCardsTemplate;
+            galleryLightbox.refresh();
+      }, 1000);
 }).catch(erroe =>
     {
         console.log(erroe); 
@@ -44,9 +48,6 @@ const onSerchPhotos = event => {
     
 };
 
-new SimpleLightbox('.gallery a', {
-captionsData: 'alt',
-  captionDelay: 250,
-});
+
 
 formEl.addEventListener('submit', onSerchPhotos)
