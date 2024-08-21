@@ -8,7 +8,7 @@ body {
   box-sizing: border-box;
 }
 
-.serch-form {
+.search-form {
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -17,7 +17,7 @@ body {
   max-width: 371px;
 }
 
-.serch-input {
+.search-input {
   width: 272px;
   height: 40px;
 }
@@ -44,7 +44,7 @@ body {
   background-color: #6c8cff;
 }
 
-.galery-list {
+.gallery-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,7 +53,7 @@ body {
   margin: 24px auto 0;
 }
 
-.galery-item-img {
+.gallery-item-img {
   border-radius: 8px;
   width: 360px;
   height: 200px;
@@ -77,54 +77,4 @@ body {
   width: 100%;
   padding: 4px 0;
   background-color: #fff;
-}
-
-.simple-lightbox {
-  position: fixed;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(46, 47, 66, 0.8);
-}
-.sl-wrapper .sl-image {
-  position: fixed;
-}
-.sl-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  min-height: 40px;
-  padding: 10px;
-  background-color: rgba(6, 7, 66, 0.8);
-  color: white;
-}
-.sl-close,
-.sl-next,
-.sl-prev {
-  position: fixed;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  font-size: 36px;
-  color: white;
-  line-height: 3rem;
-}
-
-.sl-close {
-  right: 30px;
-  top: 30px;
-}
-.sl-next {
-  right: 30px;
-  top: 50%;
-}
-.sl-prev {
-  left: 30px;
-  top: 50%;
-}
-.sl-close:hover,
-.sl-next:hover,
-.sl-prev:hover {
-  color: gray;
 }
